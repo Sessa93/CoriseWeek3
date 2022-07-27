@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  webapp:
+    build:
+      context: .
+    ports:
+      - 8080:80
+
+  tests:
+    build:
+      context: .
+    working_dir: '/project'
+    command: 'pytest ./test_app.py'
